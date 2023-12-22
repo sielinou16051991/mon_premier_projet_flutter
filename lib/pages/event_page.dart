@@ -1,51 +1,60 @@
 import 'package:flutter/material.dart';
 
-class EventPage extends StatelessWidget {
+class EventPage extends StatefulWidget {
   const EventPage({super.key});
 
   @override
+  State<EventPage> createState() => _EventPageState();
+}
+
+class _EventPageState extends State<EventPage> {
+  final events = [
+    {
+      "speaker": "Lior chamal",
+      "date": "13h à 13h30",
+      "subject": "Le code legacy",
+      "avatar": "home-img2"
+    },
+    {
+      "speaker": "Damien Cavaillés",
+      "date": "17h30 à 18h",
+      "subject": "Git blame --no-offence",
+      "avatar": "damien"
+    },
+    {
+      "speaker": "Siélinou Eric",
+      "date": "18h à 18h30",
+      "subject": "A la découverte des IA génératif",
+      "avatar": "home-img1"
+    }
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Planing du salon"),
-      ),
-      body: Center(
-        child: ListView(
-          children: [
-            Card(
-              child: ListTile(
-                leading: Image.asset(
-                  "assets/images/home-img1.jpg",
-                  scale: 1.0,
-                ),
-                title: const Text('Two-line ListTile'),
-                subtitle: const Text('Here is a second line'),
-                trailing: const Icon(Icons.more_vert),
-              ),
-            ),
-            Card(
-              child: ListTile(
-                leading: Image.asset('assets/images/damien.jpg'),
-                title: const Text('Damien Cavaillés (17h30 à 18h)'),
-                subtitle: const Text('Git blame --no-of'),
-                trailing: const Icon(Icons.more_vert),
-              ),
-            ),
-            Card(
+    return Center(
+        child: ListView.builder(
+          itemCount: events.length,
+          itemBuilder: (context, index) {
+            final event = events[index];
+            final avatar = event['avatar'];
+            final speaker = event['speaker'];
+            final date = event['date'];
+            final subject = event['subject'];
+            return Card(
               child: ListTile(
                 //leading: FlutterLogo(size: 56.0),
                 leading: Image.asset(
-                  "assets/images/home-img2.jpg",
+                  "assets/images/$avatar.jpg",
                   scale: 1.0,
                 ),
-                title: const Text('Two-line ListTile'),
-                subtitle: const Text('Here is a second line'),
-                trailing: const Icon(Icons.more_vert),
+                title: Text('$speaker ($date)'),
+                subtitle: Text('$subject'),
+                trailing: const Icon(Icons.info),
+                //trailing: const Icon(Icons.more_vert),
               ),
-            ),
-          ],
+            );
+          },
         ),
-      ),
-    );
+      )
   }
 }

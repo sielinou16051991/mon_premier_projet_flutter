@@ -11,10 +11,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      //title: 'My Dog App',
-      home: HomePage(),
-    );
+    return MaterialApp(
+        //title: 'My Dog App',
+        home: Scaffold(
+      appBar: AppBar(
+        title: const Text("Asynconf"),
+      ),
+      body: const HomePage(),
+      bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.green,
+          unselectedItemColor: Colors.grey,
+          iconSize: 32,
+          elevation: 10,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_month),
+              label: "Liste",
+            ),
+          ]),
+    ));
   }
 }
 /*
