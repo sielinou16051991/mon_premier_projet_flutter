@@ -32,29 +32,29 @@ class _EventPageState extends State<EventPage> {
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: ListView.builder(
-          itemCount: events.length,
-          itemBuilder: (context, index) {
-            final event = events[index];
-            final avatar = event['avatar'];
-            final speaker = event['speaker'];
-            final date = event['date'];
-            final subject = event['subject'];
-            return Card(
-              child: ListTile(
-                //leading: FlutterLogo(size: 56.0),
-                leading: Image.asset(
-                  "assets/images/$avatar.jpg",
-                  scale: 1.0,
-                ),
-                title: Text('$speaker ($date)'),
-                subtitle: Text('$subject'),
-                trailing: const Icon(Icons.info),
-                //trailing: const Icon(Icons.more_vert),
+      child: ListView.builder(
+        itemCount: events.length,
+        itemBuilder: (context, index) {
+          final event = events[index];
+          final avatar = event['avatar'];
+          final speaker = event['speaker'];
+          final date = event['date'];
+          final subject = event['subject'];
+          return Card(
+            child: ListTile(
+              //leading: FlutterLogo(size: 56.0),
+              leading: Image.asset(
+                "assets/images/$avatar.jpg",
+                scale: 1.0,
               ),
-            );
-          },
-        ),
-      )
+              title: Text('$speaker ($date)'),
+              subtitle: Text('$subject'),
+              trailing: const Icon(Icons.info),
+              //trailing: const Icon(Icons.more_vert),
+            ),
+          );
+        },
+      ),
+    );
   }
 }
