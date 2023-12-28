@@ -45,7 +45,8 @@ class _MyAppState extends State<MyApp> {
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           onTap: (index) => setCurrentIndex(index),
-          type: BottomNavigationBarType.fixed, // changement de page au click
+          type: BottomNavigationBarType
+              .fixed, // changement de page au clicklib/pages lib/main.dart
           selectedItemColor: Colors.green,
           unselectedItemColor: Colors.grey,
           iconSize: 32,

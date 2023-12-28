@@ -35,6 +35,7 @@ class _AddEventPageState extends State<AddEventPage> {
               margin: const EdgeInsets.only(bottom: 10),
               child: TextFormField(
                 decoration: const InputDecoration(
+                  contentPadding: EdgeInsets.only(bottom: -5, top: -5, left: 5),
                   labelText: 'Nom du conférencié',
                   hintText: "entrer le nom de la conférence",
                   border: OutlineInputBorder(),
@@ -52,6 +53,7 @@ class _AddEventPageState extends State<AddEventPage> {
               margin: const EdgeInsets.only(bottom: 10),
               child: TextFormField(
                 decoration: const InputDecoration(
+                  contentPadding: EdgeInsets.only(bottom: -5, top: -5, left: 5),
                   labelText: 'Nom du speaker',
                   hintText: "entrer le nom du speaker",
                   border: OutlineInputBorder(),
@@ -82,8 +84,10 @@ class _AddEventPageState extends State<AddEventPage> {
                       child: Text('Partner'),
                     )
                   ],
-                  decoration:
-                      const InputDecoration(border: OutlineInputBorder()),
+                  decoration: const InputDecoration(
+                      contentPadding:
+                          EdgeInsets.only(bottom: -5, top: -5, left: 5),
+                      border: OutlineInputBorder()),
                   value: selectedConfType,
                   onChanged: (value) {
                     setState(() {
