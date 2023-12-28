@@ -99,6 +99,7 @@ class _AddEventPageState extends State<AddEventPage> {
               margin: const EdgeInsets.only(bottom: 10),
               child: DateTimeFormField(
                 decoration: const InputDecoration(
+                  contentPadding: EdgeInsets.only(bottom: -5, top: -5, left: 5),
                   hintStyle: TextStyle(color: Colors.black45),
                   errorStyle: TextStyle(color: Colors.redAccent),
                   border: OutlineInputBorder(),
